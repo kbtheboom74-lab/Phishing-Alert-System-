@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Alert System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>&#128737; Phishing Alert System</h1>
+        <p class="subtitle">Analyze URLs and emails for phishing indicators</p>
+    </header>
+
+    <nav>
+        <button class="tab active" data-tab="url">URL Scanner</button>
+        <button class="tab" data-tab="email">Email Scanner</button>
+        <button class="tab" data-tab="demo">Demo Mode</button>
+        <button class="tab" data-tab="stats">Stats</button>
+    </nav>
+
+    <main>
+        <section id="url-tab" class="tab-content active">
+            <div class="input-group">
+                <label for="url-input">Enter a URL to analyze:</label>
+                <div class="input-row">
+                    <input type="text" id="url-input" placeholder="https://example.com/login">
+                    <button id="url-submit" onclick="analyzeUrl()">Scan URL</button>
+                </div>
+            </div>
+            <div id="url-results" class="results"></div>
+        </section>
+
+        <section id="email-tab" class="tab-content">
+            <div class="input-group">
+                <label for="email-input">Paste raw email content (including headers):</label>
+                <textarea id="email-input" rows="12" placeholder="From: sender@example.com&#10;To: you@example.com&#10;Subject: Important Notice&#10;&#10;Email body here..."></textarea>
+                <button id="email-submit" onclick="analyzeEmail()">Scan Email</button>
+            </div>
+            <div id="email-results" class="results"></div>
+        </section>
+
+        <section id="demo-tab" class="tab-content">
+            <button onclick="loadDemos()">Load Demo Examples</button>
+            <div id="demo-results" class="results"></div>
+        </section>
+
+        <section id="stats-tab" class="tab-content">
+            <button onclick="loadStats()">Refresh Stats</button>
+            <div id="stats-results" class="results"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Phishing Alert System &mdash; For educational and defensive security purposes only</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
